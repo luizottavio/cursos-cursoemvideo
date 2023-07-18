@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgba(56, 56, 105, 0.637);
+    text-align: center;
+}
+
+#text,#num {
+    width: 300px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+
+}
+
+#button:hover {
+    background-color: rgba(0, 0, 0, 0.151);
+    color: white;
+    font-size: 1em;
+    width: 105px;
+    height: 35px;
+    border: solid 1px
+    black;
+}
+
+select {
+    width: 240px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#res {
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+}

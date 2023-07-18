@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+    background-color: aqua;
+    font-size: 2em; 
+}
+h1 {
+    margin: 0.8em 0 0.8em 0;
+    
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    padding-top: 4em;
+}
+
+button {
+    height: 40px;
+    width: 85px;
+    border: none;
+    font-size: 0.5em;
+    font-weight: bold;
+    cursor: pointer;
+   
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}

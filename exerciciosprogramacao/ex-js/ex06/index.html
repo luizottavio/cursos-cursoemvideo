@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de verificasão de idade!</title>
+</head>
+<body>
+    <h1>verificasão de idade!</h1>
+
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="r"></div>
+
+    <script>
+        function calcular() {
+            var idade = document.getElementById('idade');
+            var res = document.getElementById('r');
+            var vl = Number(idade.value);
+            res.innerHTML = `Sua idade é ${vl}`
+            if (vl < 18) {
+            res.innerHTML = `Voce não pode Dirigir`
+            } else {
+                res.innerHTML = `Voce pode Dirigir`
+            }  
+        }
+        
+
+    </script>
+</body>
+</html>

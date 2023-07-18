@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgba(0, 255, 255, 0.226);
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 70px;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: blue;
+}
+
+button {
+    background-color: rgba(0, 255, 255, 0);
+    font-size: 0.8em;
+    width: 100px;
+    height: 30px;
+    border: solid 1px rgba(0, 0, 0, 0.226);
+    border-radius: 35px;
+      
+}
+button:hover {
+    width: 102px;
+    height: 32px;
+    background-color: blue;
+    color: aqua;
+    border: none;
+} 

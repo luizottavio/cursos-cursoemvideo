@@ -1,0 +1,45 @@
+@keyframes blinkCursor{
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to {
+        width: 21em;
+    }
+}
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(25, 25, 25);
+}  
+
+.line {
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.typing-animation {
+    animation: blinkCursor steps(40) 1s infinite normal, typing 3s steps(40) 500ms normal both;}

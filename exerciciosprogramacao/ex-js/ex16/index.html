@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Contas do mês</title>
+</head>
+
+<body>
+    <h1>Calcule suas conta do mês</h1>
+    <section>
+        <input type="text" id="text" placeholder="O que pagar">
+        <input type="number" name="num" id="num" placeholder="Valor a pagar">
+        <input type="button" value="Calcular" id="button" onclick="calcular()">
+        <br>
+        <select name="tab" id="tab" size="10"></select>
+        <br>
+        <input type="button" value="Finalizar" id="button" onclick="finalizar()">
+        <div id="res">
+
+        </div>
+    </section> 
+
+    <script src="main.js"></script>
+</body>
+</html>
