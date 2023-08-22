@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Luiz",
+        "age": 19,
+        "estaTrabalhando": true,
+        "detalhesTrabalho": {
+            "profissao": "Programador",
+            "empresa": "Empresa Globo",
+            "Nivel": "Júnior",
+            "Aria": "Back-End"
+        },
+        "hobbies": ["Jogar", "Ler", "Assistir", "codar"]
+    }
+]
