@@ -17,5 +17,3 @@ const mHoras = (() => {
 })
 
 setInterval(mHoras, 1000)
-
-mHoras()
