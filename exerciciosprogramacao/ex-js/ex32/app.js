@@ -33,13 +33,13 @@ const jsonData = JSON.stringify(objs)
 console.log(jsonData)
 console.log(typeof jsonData)
 
-// Convertendo "JSON" objeto
+// Convertendo "JSON" para objeto
 const objetoData = JSON.parse(jsonData)
 console.log(objetoData)
 console.log(typeof objetoData)
 
 objetoData.forEach(person => {
-    console.log(person.name)
+    console.log(person.hobbies)
 })
 
 objetoData.map(pessoa => {
