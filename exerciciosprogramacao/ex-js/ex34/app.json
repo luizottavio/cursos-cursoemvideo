@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Luiz",
+        "age": "19",
+        "color": "Blue",
+        "country": "Brazil",
+        "hobbies": ["Ler", "Programar", "Jogoar", "Assistir"]
+    }
+]
