@@ -50,6 +50,55 @@ class Queen {
         currentColumn.innerHTML = queen
         // currentColumn.style.backgrounColor = "#FF9F1C";
         await q.delay()
+
+        // Checking the queen in the same column
+        for (let i = r - 1; i >= 0; --i){
+            const row = table.firstChild.childNode[i]
+            const column = row.getElementByTagName("td")[col]
+
+            const value = column.innerHTML
+            
+            if (value == queen) {
+                column.style.backgroundColor = "#FB5607"
+                currentColumn.innerHTML = "-"
+                return false
+            }
+            column.style.backgroundColor = "ffca3a"
+            await q.delay()
+        }
+
+        // Checking the upper left diagonal
+        for (let i = r -1, j = col - 1; i >= 0 && j >= 0; --i, --j) {
+            const row = table.firstChild.childNodes[i]
+            const column = row.getElementByTagName("td")[j]
+            const value = column.innerHTML
+
+            if(value == queen) {
+                column.style.backgroundColor = "fb5607"
+                currentColumn.innerHTML = "-"
+                return false
+            }
+            column.style.backgroundColor = "#ffca3a"
+            await q.delay()
+        }
+
+        // Checking the upper right diagonal
+        for (let i = r - 1, j = col + 1; i >= 0 && j < n; --i, ++j) {
+            const row = table.firstChild.childNodes[i]
+            const column = row.getElementByTagName("td")[j]
+
+            const value = column.innerHTML
+
+            if(value == queen) {
+                column.style.backgroundColor = "FB5607"
+                currentColumn.innerHTML = "-"
+                return false
+            }
+            column.style.backgroundColor = "ffca3a"
+            await q.delay()
+        }
+        return true
     }
 
+    
 }
