@@ -90,15 +90,70 @@ class Queen {
             const value = column.innerHTML
 
             if(value == queen) {
-                column.style.backgroundColor = "FB5607"
+                column.style.backgroundColor = "#FB5607"
                 currentColumn.innerHTML = "-"
                 return false
             }
-            column.style.backgroundColor = "ffca3a"
+            column.style.backgroundColor = "#ffca3a"
             await q.delay()
         }
         return true
     }
 
-    
+    clearColor = async (board) => {
+        for (let j = 0; j < n; ++j) {
+            const table = document.getElementById(`table-${this.uuid[board]}`) 
+            const row = table.firstChild.childNodes[i]
+            for (let k = 0; k < n; ++k)
+                (j + k)  & 1
+                    ? (row.getElementByTagName("td")[k].style.backgroundColor = "#FF9F1C")
+                    : (row.getElementByTagName("td")[k].style.backgroundColor = "#FCCD90")
+        }
+    }
+
+    delay = async () => {
+        await new Promise((done) => setTimeout(() => done(), speed))
+    }
+
+    solveQueen = async (board, r, n) => {
+        if (r == n) {
+            ++Board
+            let table = document.getElementById(`table-${this.uuid[Board]}`)
+            for(let k = 0; k < n; ++k) {
+                let row = table.firstChild.childNodes[k]
+                row.getElementsByTagName("td")[this.position[board][k]].innerHTML = queen
+            }
+            this.position[Board] = this.position[board]
+            return
+        }
+
+        for (let i = 0; i < n; i++) {
+            await q.delay()
+            // console.log("outside:" + board)
+            await q.clearColor(board)
+            if (await q.isValid(board, r, i, n)) {
+                await q.delay()
+                // console.log("inside:" + board)
+                await q.clearColor(board)
+                let table = document.getElementById(`table-${this.uuid[board]}`)
+                let row = table.firstChild.chilNodes[r]
+                row.getElementByTagName("td")[i].innerHTML = queen
+
+                this.position[board][r] = i
+
+                if (await q.solveQueen(board, r + 1, n))
+                    await q.clearColor(board)
+                    
+                await q.delay()
+                board = Board
+                // console.log(this.Board)
+                table = document.getElementById(`table-${this.uuid[board]}`)
+                // console.log(JSON.parse(JSON.stringify(table)))
+                row = table.firstChild.childNodes[r]
+                row.getElementByTagName("td")[i].innerHTML = "-"
+
+                delete this.position[`${board}`][`${r}`]    
+            }
+        }
+    }
 }
