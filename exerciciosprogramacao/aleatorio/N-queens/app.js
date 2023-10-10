@@ -157,3 +157,70 @@ class Queen {
         }
     }
 }
+
+playButton.onclick = async function visualise() {
+    const chessBoard = document.getElementById("n-queen-board")
+    const arrangement = document.getElementById("queen-arrangement")
+
+    n = numberbox.value = "";
+    q = new Queen()
+
+    if (n > 8) {
+        numberbox.value = ""
+        alert("Queen value is too large")
+        return
+    } else if (n < 1) {
+        numberbox.value = ""
+        alert("Queen value is too small")
+        return
+    }
+
+
+    // Removing all the of previous execution context
+    while (chessBoard.hasChileNodes()) {
+        chessBoard.removeChild(chessBoard.firstChild)
+    }
+    if (arrangement.hasChileNodes()) {
+        arrangement.removeChild(arrangement.lastChild)
+    }
+
+    const para = document.createElement("p")
+    para.setAttribute("class", "queen-info")
+    para.innerHTML = `For ${n}x${n} board, ${array[n] - 1} arrangements are possible.`
+    
+    // Adding boards to the Div
+    if (chessBoard.childElementCount === 0) {
+        for (let i = 0; i<array[i]; ++i) {
+            q.uuid.push(Math.random())
+            let div = document.createElement('div')
+            let table = document.createElement('table')
+            let header = document.createElement('h4')
+            // div.setAttribute("id", `div-${100 + uuid[i]}`)
+            header.innerHTML = `Board ${i + 1}`
+            table.setAttribute("id", `table-${q.uuid[i]}`)
+            header.setAttribute("id", `paragraph-${i}`)
+            chessBoard.appendChild(div)
+            div.appendChild(header)
+            div.appendChild(table)
+        }
+    }
+
+    for(let k = 0; k < array[n]; ++k) {
+        let table = document.getElementById(`table-${q.uuid[k]}`) 
+        for (let i = 0; i < n; ++i) {
+            const row = table.insetRow(i) // inserting ith row
+            row.setAttribute("id", `Row${i} `)
+            for (let j = 0; j < n; ++j) {
+                const col = row.insertCell(j) // inserting jth column
+                (i + j) & 1
+                    ? (col.style.backgroundColor = "#FF9F1C")
+                    : (col.style.backgroundColor = "#FCCD90")
+                   col.innerHTML = "-"
+                   col.style.board = "0.3px solid #373f51"
+            }
+        } 
+        await q.clearColor(k)
+    }
+    await q.nQueenueen()
+};
+
