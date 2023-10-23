@@ -1,0 +1,6 @@
+wint Ada.Texto_IO;
+
+procedure alo is
+begin
+	Ada.Text_IO.Put_Line("Olá Mundo!")
+end alo;

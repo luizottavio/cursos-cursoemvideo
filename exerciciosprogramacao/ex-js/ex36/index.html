@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas</title>
+</head>
+<body>
+  <h1>Gerador de Senhas Aleatórias</h1>
+  <p id="password"></p>
+  <button onclick="generatePassword()">Gerar Senha</button>
+
+  <script>
+    function generatePassword() {
+      // Tamanho da senha desejado
+      const length = 12;
+
+      // Caracteres permitidos na senha
+      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        // Escolhe um caractere aleatório do conjunto charset
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset.charAt(randomIndex);
+      }
+
+      // Exibe a senha gerada
+      document.getElementById("password").textContent = "Senha: " + password;
+    }
+  </script>
+</body>
+</html>
